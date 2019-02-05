@@ -1,0 +1,20 @@
+.container {
+    width: 25%;
+    height: 100%;
+    border: 1px black solid;
+    float: left;
+}
+
+.exercise {
+    width: 75%;
+    height: 100%;
+    border: 1px red solid;
+    float: right;
+}
+
+.exerciseTitle {
+    &:hover {
+        color: red;
+        cursor: pointer;
+    }
+}

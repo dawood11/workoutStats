@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<h1>
+  exercises works!
+</h1>
+
+<div class="container">
+  <span>{{test | async}}</span>
+  <p *ngIf="exerciseList.length === 0">No exercises have been registered.</p>
+<ul *ngIf="exerciseList.length !== 0">
+    <!-- routerLink="/exercises/{{exercise}}" queryParams="{{exercise}} -->
+  <li *ngFor="let exercise of exerciseList">
+    <span class="exerciseTitle" (click)="handleExerciseClick($event)">{{ exercise.name }}</span>
+  </li>
+</ul>
+</div>
+
+<div class="exercise" *ngIf="exercise">
+  <span class="badge badge-secodary">Last Update: {{ (lastUpdate | async) | date:'mediumTime' }} | Total items: {{ (todos | async).length }}</span>
+  <app-exercise [exercise]="exercise"></app-exercise>
+</div>
